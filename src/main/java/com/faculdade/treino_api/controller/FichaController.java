@@ -29,4 +29,15 @@ public class FichaController {
     public ResponseEntity<List<Ficha>> listarTodas() {
         return ResponseEntity.ok(fichaRepository.findAll());
     }
+
+    // Rota para deletar uma ficha pelo ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        // Verifica se a ficha existe antes de tentar deletar
+        if (fichaRepository.existsById(id)) {
+            fichaRepository.deleteById(id);
+            return ResponseEntity.noContent().build(); // Retorna 204 (Deletado com sucesso)
+        }
+        return ResponseEntity.notFound().build(); // Retorna 404 (Não encontrado)
+    }
 }
