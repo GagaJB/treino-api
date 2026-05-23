@@ -1,6 +1,7 @@
 package com.faculdade.treino_api.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_exercicio")
@@ -16,6 +17,7 @@ public class Exercicio {
 
     @ManyToOne
     @JoinColumn(name = "ficha_id")
+    @JsonIgnore
     private Ficha ficha;
 
     // Construtor vazio
@@ -36,4 +38,6 @@ public class Exercicio {
 
     public Ficha getFicha() { return ficha; }
     public void setFicha(Ficha ficha) { this.ficha = ficha; }
+
+
 }
