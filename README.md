@@ -47,9 +47,17 @@ Criar um Exercício (POST):
 curl -X POST http://localhost:8080/exercicios -H "Content-Type: application/json" -d '{"nomeMovimento": "Supino", "series": 4, "cargaAtual": 60.0, "fichaId": 1}'
 
 ##  Autoria e Divisão de Tarefas
-- Atualizar no final
+- Isaque Rocha - Estruturação do projeto e criação das entidades (Ficha e Exercício)
+- Nicolas Pereia - Configuração de perfis de base de dados e desenvolvimento das rotas REST
+- Kaio Vinicyus - Tratamento de exceções e implementação de testes unitários
+- Arthur Augusto - Documentação
+- Gabriel Botelho - Documentação e deploy na nuvem
 
-##  Deploy em Produção
-* O link público e funcional da API será adicionado aqui após a fase de deploy.
-* **Plataforma utilizada:** [A definir]
-* **Guia rápido:** [A definir]
+##  Deploy
+* https://treino-api-btno.onrender.com/swagger-ui/index.html
+* **Plataforma utilizada:** RENDER
+* **Guia rápido:**
+1. **Conteinerização:** Criação de um arquivo `Dockerfile` multi-stage na raiz do projeto para compilar o código com Maven e disponibilizar o artefato `.jar` final utilizando a imagem base estável do Eclipse Temurin (Java 21).
+2. **Conexão com GitHub:** Criação de um novo *Web Service* na plataforma Render diretamente conectado ao repositório oficial do projeto.
+3. **Ambiente:** Configuração do ambiente de execução (*Language*) definido como **Docker** sob o plano gratuito (*Free*).
+4. **Variáveis de Ambiente:** Adição da variável de ambiente global `PORT` com valor `8080` nas configurações avançadas para o correto direcionamento do tráfego web do servidor Tomcat.
