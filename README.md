@@ -6,7 +6,7 @@ Esta é uma API RESTful desenvolvida com Spring Boot para gerenciar fichas de tr
 O objetivo deste sistema é permitir que o usuário organize sua rotina de treinos (focada na divisão Push, Pull e Legs), registrando exercícios, séries e controlando a carga atual de cada movimento para monitorar a evolução física ao longo do tempo.
 
 ##  Tecnologias Utilizadas
-- **Java 25**
+- **Java 21**
 - **Spring Boot 3.x**
 - **Spring Data JPA**
 - **H2 Database** (Ambiente de Desenvolvimento/Testes)
@@ -17,7 +17,7 @@ O objetivo deste sistema é permitir que o usuário organize sua rotina de trein
 ##  Como executar o projeto localmente
 
 ### Pré-requisitos
-- Ter o Java 25 instalado na máquina.
+- Ter o Java 21 instalado na máquina.
 - O projeto utiliza o Maven Wrapper, portanto não é obrigatório ter o Maven instalado globalmente.
 
 ### Passos para execução
